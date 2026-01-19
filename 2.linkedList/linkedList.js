@@ -6,9 +6,17 @@ class Node {
 }
 
 class LinkedList {
-    constructor(){
-        this.value = value
+    constructor(value){
+        const newNode = new Node(value);
+        this.head = newNode
+        this.tail = this.head
+        this.length = 1
     }
 }
+
+
+let myLinkedList = new LinkedList(4)
+
+console.log(myLinkedList)
 
 
