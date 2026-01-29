@@ -80,6 +80,18 @@ class LinkedList {
         console.log(buffer)
     }
 
+    // shift removes the first item and returns it
+    shift() {
+        if (!this.head) return undefined
+        let buf = this.head
+        this.head = this.head.next
+        this.length--
+        if (this.length == 0) {
+            this.tail = null
+        }
+        buf.next = null
+        return buf
+    }
 }
 
 
@@ -96,3 +108,8 @@ myLinkedList.unshift(-1);
 
 myLinkedList.print();
 
+
+let shiftRes = myLinkedList.shift()
+console.log("shift result = " + shiftRes.value)
+
+myLinkedList.print()
