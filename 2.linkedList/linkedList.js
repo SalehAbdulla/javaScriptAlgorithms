@@ -92,6 +92,20 @@ class LinkedList {
         buf.next = null
         return buf
     }
+
+
+    get(index) {
+        if (index == 0) {return this.head}
+        let curr = this.head
+        let i = 0
+        while(i != index) {
+            curr = curr.next
+            i++
+        }
+        curr.next = null
+        return curr
+    }
+
 }
 
 
@@ -113,3 +127,5 @@ let shiftRes = myLinkedList.shift()
 console.log("shift result = " + shiftRes.value)
 
 myLinkedList.print()
+
+console.log(myLinkedList.get(3))
